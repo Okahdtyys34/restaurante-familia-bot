@@ -1,0 +1,23 @@
+name = "restaurante-familia-bot"
+main = "worker.mjs"
+compatibility_date = "2026-11-10"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+preview_urls = false
+
+[vars]
+RESTAURANT_TIME_ZONE = "America/Fortaleza"
+DELIVERY_FEE_CENTS = "0"
+META_SEND_LIMIT = "900"
+VOICE_ENABLED = "1"
+
+[ai]
+binding = "AI"
+
+[[durable_objects.bindings]]
+name = "RESTAURANT"
+class_name = "Restaurant"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Restaurant"]
